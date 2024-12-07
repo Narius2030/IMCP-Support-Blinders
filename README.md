@@ -15,6 +15,10 @@
   - [Contributing](#contributing)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
+- [Data Lake for Image Captioning model](#data-lake-for-image-captioning-model)
+- [Mobile Application](#mobile-application)
+
+
 ## Overview
 
 This project focuses on image captioning, utilizing two primary models: **DarkNetLM** and **DarkNetVG2**. Both models leverage the CSP DarkNet53 architecture as the backbone of YOLOv8 for feature extraction from images, but they differ in their approaches to generating captions.
@@ -74,3 +78,12 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 - YOLOv8 for its powerful object detection capabilities.
 - The creators of the CSP DarkNet53 architecture.
 - The developers of BERT and GPT-2 for their contributions to natural language processing.
+
+## Data Lake for Image Captioning model
+This system involved the development and implementation of a Data Lake architecture to support an AI model capable of generating image captions. The architecture was designed to efficiently ingest, process, and centralized store large volumes of image and text data. View more details at this [repo](https://github.com/Narius2030/DataLake-Solution-IMCP.git)
+
+![image](https://github.com/user-attachments/assets/1f37671e-7be2-45cc-8a6b-ee926171ead8)
+
+## Mobile Application
+This mobile application uses the camera to capture images and sends them to a microservice for image captioning. Powered by a machine learning model, the app generates descriptive captions for each photo, providing visually impaired users with a detailed understanding of their surroundings through auditory feedback. View more detailes at this [repo](https://github.com/Narius2030/IMCP-Mobile-App.git)
+
