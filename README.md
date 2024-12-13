@@ -82,6 +82,8 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Data Lake for Image Captioning model
 This system involved the development and implementation of a Data Lake architecture to support an AI model capable of generating image captions. The architecture was designed to efficiently ingest, process, and centralized store large volumes of image and text data. View more details at this [repo](https://github.com/Narius2030/DataLake-Solution-IMCP.git)
 
+> You can view this repo [here](https://github.com/Narius2030/DataLake-Solution-IMCP.git). You also can view demo videos [here](https://drive.google.com/drive/folders/1R6nP3sOYj5M8tfLFALDVrXTfL-nEiKOz?usp=sharing)
+
 ![image](https://github.com/user-attachments/assets/1f37671e-7be2-45cc-8a6b-ee926171ead8)
 
 ## Mobile Application
