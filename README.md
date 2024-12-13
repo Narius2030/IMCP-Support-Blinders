@@ -80,14 +80,16 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 - The developers of BERT and GPT-2 for their contributions to natural language processing.
 
 ## Data Lake for Image Captioning model
-This system involved the development and implementation of a Data Lake architecture to support an AI model capable of generating image captions. The architecture was designed to efficiently ingest, process, and centralized store large volumes of image and text data. View more details at this [repo](https://github.com/Narius2030/DataLake-Solution-IMCP.git)
+This system involved the development and implementation of a Data Lake architecture to support an AI model capable of generating image captions. The architecture was designed to efficiently ingest, process, and centralized store large volumes of image and text data.
 
-> You can view this repo [here](https://github.com/Narius2030/DataLake-Solution-IMCP.git). You also can view demo videos [here](https://drive.google.com/drive/folders/1R6nP3sOYj5M8tfLFALDVrXTfL-nEiKOz?usp=sharing)
+> You can view more details in this [repo](https://github.com/Narius2030/DataLake-Solution-IMCP.git). You also can view demo [videos](https://drive.google.com/drive/folders/1R6nP3sOYj5M8tfLFALDVrXTfL-nEiKOz?usp=sharing)
 
 ![image](https://github.com/user-attachments/assets/1f37671e-7be2-45cc-8a6b-ee926171ead8)
 
 ## Mobile Application
-This mobile application uses the camera to capture images and sends them to a microservice for image captioning. Powered by a machine learning model, the app generates descriptive captions for each photo, providing visually impaired users with a detailed understanding of their surroundings through auditory feedback. View more detailes at this [repo](https://github.com/Narius2030/IMCP-Mobile-App.git)
+This mobile application uses the camera to capture images and sends them to a microservice for image captioning. Powered by a machine learning model, the app generates descriptive captions for each photo, providing visually impaired users with a detailed understanding of their surroundings through auditory feedback.
+
+> View more detailes at this [repo](https://github.com/Narius2030/IMCP-Mobile-App.git). You also can view demo [video](https://drive.google.com/file/d/1F1R6gMqDiPtDdot4LIiesDqoLE0NkW7s/view?usp=drive_link)
 
 ![image](https://github.com/user-attachments/assets/53b30016-ddea-476d-8798-2b22c45e6f94)
 
