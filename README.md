@@ -1,7 +1,8 @@
-# 🚦 Vietnamese Traffic Image Captioning Dataset & System
+# 🚦 Image Caption Support Blinder
 
 ## 📑 Table of Contents
-- [🚦 Vietnamese Traffic Image Captioning Dataset \& System](#-vietnamese-traffic-image-captioning-dataset--system)
+
+- [🚦 Image Caption Support Blinder](#-image-caption-support-blinder)
   - [📑 Table of Contents](#-table-of-contents)
   - [📝 Overview](#-overview)
   - [📁 Folder Structure](#-folder-structure)
@@ -93,19 +94,23 @@ pip install -r ../4.Image_data_augument/python/requirements.txt
 ### 2. Run the Pipeline Steps
 
 **Step 1: Crawl data**
+
 ```bash
 python 1.crawl_data/python/traffic_raw.py
 ```
 
 **Step 2: Data cleaning**
+
 - Use the notebook or script in `2.data_preprocessing/jupyter/`
 
 **Step 3: Caption generation**
+
 ```bash
 python 3.labels_short_captions/python/label_short_captions.py
 ```
 
 **Step 4: Augmentation**
+
 ```bash
 python 4.Image_data_augument/python/data_augument.py
 ```
@@ -126,7 +131,7 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## 🙏 Acknowledgments
 
 - BERT, GPT-2, and Albumentations authors.
-  
+
 ## 💁‍♂️ Author
 
 - [Narius2030](https://github.com/Narius2030) 🦉
