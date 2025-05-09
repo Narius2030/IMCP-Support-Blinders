@@ -1,96 +1,134 @@
-# Image Captioning with DarkNetLM and DarkNetVG2
+# 🚦 Vietnamese Traffic Image Captioning Dataset & System
 
-## Table of Contents
-- [Image Captioning with DarkNetLM and DarkNetVG2](#image-captioning-with-darknetlm-and-darknetvg2)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Models](#models)
-    - [DarkNetLM](#darknetlm)
-    - [DarkNetVG2](#darknetvg2)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [DarkNetLM](#darknetlm-1)
-    - [DarkNetVG2](#darknetvg2-1)
-  - [Results](#results)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
-- [Data Lake for Image Captioning model](#data-lake-for-image-captioning-model)
-- [Mobile Application](#mobile-application)
+## 📑 Table of Contents
+- [🚦 Vietnamese Traffic Image Captioning Dataset \& System](#-vietnamese-traffic-image-captioning-dataset--system)
+  - [📑 Table of Contents](#-table-of-contents)
+  - [📝 Overview](#-overview)
+  - [📁 Folder Structure](#-folder-structure)
+  - [🔗 Pipeline](#-pipeline)
+  - [🤖 Models](#-models)
+  - [🚀 Usage](#-usage)
+    - [1. Environment Setup](#1-environment-setup)
+    - [2. Run the Pipeline Steps](#2-run-the-pipeline-steps)
+  - [📊 Results](#-results)
+  - [🤝 Contributing](#-contributing)
+  - [🪪 License](#-license)
+  - [🙏 Acknowledgments](#-acknowledgments)
+  - [💁‍♂️ Author](#️-author)
 
+## 📝 Overview
 
-## Overview
+This project provides a full pipeline for building a Vietnamese traffic image captioning dataset and system, supporting both computer vision research and accessibility for the visually impaired. The pipeline includes data crawling, cleaning, caption generation, and image augmentation.
 
-This project focuses on image captioning, utilizing two primary models: **DarkNetLM** and **DarkNetVG2**. Both models leverage the CSP DarkNet53 architecture as the backbone of YOLOv8 for feature extraction from images, but they differ in their approaches to generating captions.
+## 📁 Folder Structure
 
-## Models
-
-### DarkNetLM
-
-- **Architecture**: DarkNetLM employs the CSP DarkNet53 architecture within YOLOv8 for image feature extraction.
-- **Components**:
-  - **Bert-Tokenizer**: Utilized for tokenizing input text, allowing the model to understand and process natural language effectively.
-  - **LSTM**: Long Short-Term Memory networks are used to generate sequential captions based on the extracted image features.
-
-### DarkNetVG2
-
-- **Architecture**: Similar to DarkNetLM, DarkNetVG2 also uses the CSP DarkNet53 architecture in YOLOv8 for image feature extraction.
-- **Components**:
-  - **GPT-2**: This model employs the GPT-2 architecture for generating captions, leveraging its powerful language generation capabilities to produce coherent and contextually relevant descriptions.
-
-## Installation
-
-To set up the project, clone the repository and install the required dependencies:
 ```
-git clone https://github.com/yourusername/Image-Captioning.git
-cd Image-Captioning
-pip install -r requirements.txt
-```
-
-## Usage
-
-To run the models, use the following commands:
-
-### DarkNetLM
-```
-python Test_model/test-model-bert-lstm-8ep.ipynb
-```
-
-### DarkNetVG2
-```
-python Test_model/test-model-gpt2-8ep.ipynb --> update continue...
+IMCP-Support-Blinders/
+├── README.md
+├── Data/
+│   ├── dashboard.dio
+│   ├── image.png
+│   ├── README_en.md
+│   ├── README_vn.md
+│   ├── README.md
+│   ├── 1.crawl_data/
+│   │   ├── env_crawl_data.yaml
+│   │   ├── output/
+│   │   │   ├── metadata.json
+│   │   │   ├── traffic_images_dataset_v1.csv
+│   │   │   ├── traffic_images_dataset_v2.csv
+│   │   │   └── traffic_images_dataset_v3.csv
+│   │   └── python/
+│   │       └── traffic_raw.py
+│   ├── 2.data_preprocessing/
+│   │   ├── jupyter/
+│   │   │   └── data_preprocessing.ipynb
+│   │   └── output/
+│   ├── 3.labels_short_captions/
+│   │   ├── output/
+│   │   │   └── csv_with_captions/
+│   │   └── python/
+│   └── 4.Image_data_augument/
+│       ├── output/
+│       └── python/
+├── Model/
+│   ├── DarkNetLM/
+│   └── DarkNetVG2/
 ```
 
-## Results
+- **Data/**: Main pipeline and dataset scripts, including crawling, preprocessing, captioning, and augmentation.<br>
+  👉 For more details, see the [Germini-Captioning-Dataset-2025 repo](https://github.com/TrieuPhi/Germini-Captioning-Dataset-2025)
+- **Model/**: Model code and experiments (details to be updated).
 
-The models are evaluated based on their ability to generate accurate and descriptive captions for a variety of images. Performance metrics and sample outputs will be provided in the results section of the documentation.
+## 🔗 Pipeline
 
-## Contributing
+1. **Crawl Data**  
+   Collect traffic images from Google Images via SerpApi, save metadata and images locally.
+
+2. **Data Preprocessing**  
+   Clean data: remove broken URLs, handle nulls, standardize fields.
+
+3. **Labels Short Captions**  
+   Use Gemini 2.0 Flash API to generate concise (10-15 words) captions for each image.
+
+4. **Image Augmentation**  
+   Augment data using modern image transformation techniques with [Albumentations](https://albumentations.ai/).
+
+## 🤖 Models
+
+**To be updated.**
+
+## 🚀 Usage
+
+### 1. Environment Setup
+
+```bash
+cd Data/1.crawl_data/
+conda env create -f env_crawl_data.yaml
+conda activate crawl_data
+pip install -r ../3.labels_short_captions/python/requirements.txt
+pip install -r ../4.Image_data_augument/python/requirements.txt
+```
+
+### 2. Run the Pipeline Steps
+
+**Step 1: Crawl data**
+```bash
+python 1.crawl_data/python/traffic_raw.py
+```
+
+**Step 2: Data cleaning**
+- Use the notebook or script in `2.data_preprocessing/jupyter/`
+
+**Step 3: Caption generation**
+```bash
+python 3.labels_short_captions/python/label_short_captions.py
+```
+
+**Step 4: Augmentation**
+```bash
+python 4.Image_data_augument/python/data_augument.py
+```
+
+## 📊 Results
+
+- Augmented images and captions are stored in `Data/4.Image_data_augument/output/` and `augmented/`.
+- Cleaned CSVs and intermediate results are in the corresponding `output/` folders.
+
+## 🤝 Contributing
 
 Contributions are welcome! Please submit a pull request or open an issue for any suggestions or improvements.
 
-## License
+## 🪪 License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
-- YOLOv8 for its powerful object detection capabilities.
-- The creators of the CSP DarkNet53 architecture.
-- The developers of BERT and GPT-2 for their contributions to natural language processing.
+- BERT, GPT-2, and Albumentations authors.
+  
+## 💁‍♂️ Author
 
-## Data Lake for Image Captioning model
-This system involved the development and implementation of a Data Lake architecture to support an AI model capable of generating image captions. The architecture was designed to efficiently ingest, process, and centralized store large volumes of image and text data.
-
-> You can view more details in this [repo](https://github.com/Narius2030/DataLake-Solution-IMCP.git). You also can view demo [videos](https://drive.google.com/drive/folders/1R6nP3sOYj5M8tfLFALDVrXTfL-nEiKOz?usp=sharing)
-
-![image](https://github.com/user-attachments/assets/1f37671e-7be2-45cc-8a6b-ee926171ead8)
-
-## Mobile Application
-This mobile application uses the camera to capture images and sends them to a microservice for image captioning. Powered by a machine learning model, the app generates descriptive captions for each photo, providing visually impaired users with a detailed understanding of their surroundings through auditory feedback.
-
-> View more detailes at this [repo](https://github.com/Narius2030/IMCP-Mobile-App.git). You also can view demo [video](https://drive.google.com/file/d/1F1R6gMqDiPtDdot4LIiesDqoLE0NkW7s/view?usp=drive_link)
-
-![image](https://github.com/user-attachments/assets/53b30016-ddea-476d-8798-2b22c45e6f94)
-
-
+- [Narius2030](https://github.com/Narius2030) 🦉
+- [HTN-DT-Beo](https://github.com/HTN-DT-Beo) 🐻
+- [TrieuPhi](https://github.com/TrieuPhi) 🚀
